@@ -21,3 +21,15 @@
 
 body {
 }
+
+/* Add cursor pointer to all buttons */
+button {
+  cursor: pointer;
+}
+
+/* Add cursor pointer to clickable elements */
+a,
+[role='button'],
+[onclick] {
+  cursor: pointer;
+}
