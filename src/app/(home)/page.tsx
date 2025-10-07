@@ -20,18 +20,30 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Hero />
+      <section id='hero'>
+        <Hero />
+      </section>
       <Features />
       <OurMedical />
-      <AboutMedical />
-      <OurServices />
-      <OurTeam />
+      <section id='about'>
+        <AboutMedical />
+      </section>
+      <section id='services'>
+        <OurServices />
+      </section>
+      <section id='team'>
+        <OurTeam />
+      </section>
       <AwardsInfo />
-      <TestimonialCarousel />
+      <section id='testimonials'>
+        <TestimonialCarousel />
+      </section>
       <AppointmentBook />
       <Insurance />
       <AppointmentTab />
-      <TimingInfo />
+      <section id='contact'>
+        <TimingInfo />
+      </section>
       <ChatBot
         projectId='aai-ps1-sandbox'
         agentId='276d675c-72f4-4fd7-8b85-01a3a2d25c64'

@@ -5,8 +5,7 @@ const TopBar = () => {
   return (
     <header>
       <div>
-        {/* Top bar */}
-        <div className='bg-teal-900 px-6 py-4 text-sm text-white'>
+        <div className='hidden bg-teal-900 px-6 py-4 text-sm text-white lg:block'>
           <div className='flex items-center justify-around'>
             <div className='flex flex-row items-center justify-center gap-3'>
               {/* address */}

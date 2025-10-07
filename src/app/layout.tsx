@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
+// @ts-expect-error CSS import types not available
 import './globals.css';
 
 const geistSans = Geist({
@@ -28,6 +30,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Toaster
+          position='top-right'
+          toastOptions={{
+            duration: 4000,
+            style: {
+              borderRadius: '8px',
+              fontSize: '14px',
+            },
+          }}
+        />
       </body>
     </html>
   );

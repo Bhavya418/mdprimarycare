@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 import { User, Mail, Phone, Calendar, Clock, Heart } from 'lucide-react';
 
 const AppointmentBook = () => {
@@ -13,6 +15,12 @@ const AppointmentBook = () => {
     appointmentTime: '',
     smsConsent: false,
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -31,17 +39,118 @@ const AppointmentBook = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Appointment form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await axios.post('/api/appointment', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        timeout: 10000, // 10 seconds timeout
+      });
+
+      if (response.status === 200) {
+        // Show success toast
+        toast.success(
+          'Appointment request sent successfully! We will contact you shortly to confirm.',
+          {
+            duration: 5000,
+            position: 'top-right',
+            style: {
+              background: '#10b981',
+              color: '#fff',
+              fontWeight: '500',
+            },
+            iconTheme: {
+              primary: '#fff',
+              secondary: '#10b981',
+            },
+          }
+        );
+
+        setSubmitStatus({
+          type: 'success',
+          message:
+            'Appointment request sent successfully! We will contact you shortly to confirm.',
+        });
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          department: '',
+          appointmentDate: '',
+          appointmentTime: '',
+          smsConsent: false,
+        });
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Axios-specific error handling
+        if (error.response) {
+          // Server responded with error status
+          const errorMessage =
+            error.response.data.error ||
+            'Failed to send appointment request. Please try again.';
+          toast.error(errorMessage, {
+            duration: 4000,
+            position: 'top-right',
+          });
+          setSubmitStatus({
+            type: 'error',
+            message: errorMessage,
+          });
+        } else if (error.request) {
+          // Request was made but no response received
+          const errorMessage =
+            'Network error. Please check your connection and try again.';
+          toast.error(errorMessage, {
+            duration: 4000,
+            position: 'top-right',
+          });
+          setSubmitStatus({
+            type: 'error',
+            message: errorMessage,
+          });
+        } else {
+          // Something else happened
+          const errorMessage =
+            'An unexpected error occurred. Please try again.';
+          toast.error(errorMessage, {
+            duration: 4000,
+            position: 'top-right',
+          });
+          setSubmitStatus({
+            type: 'error',
+            message: errorMessage,
+          });
+        }
+      } else {
+        // Non-Axios error
+        const errorMessage = 'An unexpected error occurred. Please try again.';
+        toast.error(errorMessage, {
+          duration: 4000,
+          position: 'top-right',
+        });
+        setSubmitStatus({
+          type: 'error',
+          message: errorMessage,
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section className='bg-gray-50 py-16 sm:py-24'>
-      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <div className='mx-auto max-w-7xl px-6 sm:px-12 md:px-16 lg:px-8'>
         <div className='grid grid-cols-1 items-center gap-12 lg:grid-cols-2'>
-          {/* Left side - Image */}
-          <div className='relative'>
+          {/* Left side - Image - Hidden on md and smaller screens */}
+          <div className='relative order-2 hidden lg:order-1 lg:block'>
             <Image
               src='/appointment.webp'
               alt='Doctor with stethoscope'
@@ -52,9 +161,9 @@ const AppointmentBook = () => {
           </div>
 
           {/* Right side - Form */}
-          <div className='rounded-lg bg-white p-12 shadow-xl'>
-            <div className='mb-8'>
-              <h2 className='mb-4 text-3xl font-bold text-slate-800'>
+          <div className='order-1 rounded-lg bg-white p-6 shadow-xl sm:p-8 lg:order-2 lg:col-span-1 lg:p-12'>
+            <div className='mb-8 text-center lg:text-left'>
+              <h2 className='mb-4 text-2xl font-bold text-slate-800 sm:text-3xl'>
                 Make an Appointment
               </h2>
               <p className='leading-relaxed text-gray-600'>
@@ -181,12 +290,37 @@ const AppointmentBook = () => {
                 </label>
               </div>
 
+              {/* Status Message */}
+              {submitStatus.type && (
+                <div
+                  className={`rounded-md p-4 ${
+                    submitStatus.type === 'success'
+                      ? 'border border-green-200 bg-green-50 text-green-800'
+                      : 'border border-red-200 bg-red-50 text-red-800'
+                  }`}
+                >
+                  <p className='text-sm font-medium'>{submitStatus.message}</p>
+                </div>
+              )}
+
               {/* Submit Button */}
               <button
                 type='submit'
-                className='w-full rounded-md bg-teal-500 px-6 py-4 text-lg font-semibold text-white transition-colors duration-200 hover:bg-teal-600 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:outline-none'
+                disabled={isSubmitting}
+                className={`w-full rounded-md px-6 py-4 text-lg font-semibold text-white transition-colors duration-200 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:outline-none ${
+                  isSubmitting
+                    ? 'cursor-not-allowed bg-gray-400'
+                    : 'bg-teal-500 hover:bg-teal-600'
+                }`}
               >
-                SUBMIT
+                {isSubmitting ? (
+                  <div className='flex items-center justify-center'>
+                    <div className='mr-2 h-5 w-5 animate-spin rounded-full border-b-2 border-white'></div>
+                    Sending...
+                  </div>
+                ) : (
+                  'SUBMIT'
+                )}
               </button>
             </form>
           </div>

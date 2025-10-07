@@ -16,8 +16,8 @@ const OurServices = () => {
   ];
   return (
     <section className='bg-teal-800 py-12 sm:py-16'>
-      <div>
-        <div className='mx-auto flex max-w-5xl flex-col justify-center border-b-2 border-gray-100 pb-8'>
+      <div className='mx-6 sm:mx-16 md:mx-16 lg:mx-12'>
+        <div className='mx-auto flex max-w-5xl flex-col justify-center border-b-2 border-gray-100 pb-8 text-center lg:text-left'>
           <p className='font-semibold tracking-wide text-white uppercase'>
             WE OFFER SERVICES
           </p>
@@ -31,7 +31,7 @@ const OurServices = () => {
             patients of all ages.
           </p>
         </div>
-        <div className='mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5'>
+        <div className='mx-auto mt-10 grid max-w-5xl grid-cols-2 justify-items-center gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
           {services.map((service, index) => (
             <div key={index} className='flex flex-col items-center text-center'>
               <div className='mb-4 flex h-16 w-16 items-center justify-center'>

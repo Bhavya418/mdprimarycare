@@ -19,6 +19,101 @@
   }
 }
 
+/* Base responsive settings */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-width: 320px; /* Minimum mobile width */
+}
+
+/* Prevent horizontal scrolling issues */
+.container,
+.max-w-7xl,
+.max-w-6xl,
+.max-w-4xl,
+.max-w-2xl {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-4xl,
+  .max-w-2xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-4xl,
+  .max-w-2xl {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure flex containers don't break layout */
+.flex {
+  min-width: 0;
+}
+
+/* Grid responsive helpers */
+.grid-responsive {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 body {
 }
 
