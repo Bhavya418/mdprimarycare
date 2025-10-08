@@ -85,14 +85,7 @@ const Navigation = () => {
                   About Us
                 </Link>
               </li>
-              <li>
-                <Link
-                  href='/services'
-                  className={getLinkClassName('/services')}
-                >
-                  Services
-                </Link>
-              </li>
+
               <li>
                 <Link href='/team' className={getLinkClassName('/team')}>
                   Our Team

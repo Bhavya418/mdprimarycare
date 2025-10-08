@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { UserSearch, ThumbsUp } from 'lucide-react';
 
 const Header = () => {
@@ -51,9 +52,14 @@ const Header = () => {
         </div>
 
         {/* Book Online Button */}
-        <button className='w-full rounded-sm bg-yellow-400 px-4 py-2 text-sm font-bold text-black transition hover:bg-yellow-300 focus:outline-none sm:w-auto sm:px-6 sm:py-3 sm:text-base'>
+        <Link
+          href='https://www.zocdoc.com/practice/md-primary-care-66122?lock=true&isNewPatient=false&referrerType=widget'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='inline-block w-full rounded-sm bg-yellow-400 px-4 py-2 text-center text-sm font-bold text-black transition hover:bg-yellow-300 focus:outline-none sm:w-auto sm:px-6 sm:py-3 sm:text-base'
+        >
           Book Online
-        </button>
+        </Link>
       </div>
     </header>
   );

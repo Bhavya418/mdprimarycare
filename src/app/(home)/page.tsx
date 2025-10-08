@@ -10,9 +10,6 @@ import AwardsInfo from '@/components/MedicalInfo/AwardsInfo';
 import TimingInfo from '@/components/FeatureTab/TimingInfo';
 import AppointmentTab from '@/components/Appointment/AppointmentTab';
 import Insurance from '@/components/FeatureTab/Insurance';
-import ChatBot from '@/components/ChatBot/ChatBot';
-import Footer from '@/components/Footer/Footer';
-import BackToTopButton from '@/components/Navigation/BackToTopButton';
 import AppointmentBook from '@/components/Appointment/AppointmentBook';
 import TestimonialCarousel from '@/components/Testimonials/TestimonialCarousel';
 
@@ -44,14 +41,6 @@ const Home = () => {
       <section id='contact'>
         <TimingInfo />
       </section>
-      <ChatBot
-        projectId='aai-ps1-sandbox'
-        agentId='276d675c-72f4-4fd7-8b85-01a3a2d25c64'
-        languageCode='en'
-        location='us-central1'
-      />
-      <Footer />
-      <BackToTopButton />
     </>
   );
 };

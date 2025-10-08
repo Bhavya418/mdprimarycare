@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
-// @ts-expect-error CSS import types not available
+import ChatBot from '@/components/ChatBot/ChatBot';
+import Footer from '@/components/Footer/Footer';
+import BackToTopButton from '@/components/Navigation/BackToTopButton';
 import './globals.css';
 
 const geistSans = Geist({
@@ -30,6 +32,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Footer />
+        <BackToTopButton />
+        <ChatBot
+          projectId='aai-ps1-sandbox'
+          agentId='276d675c-72f4-4fd7-8b85-01a3a2d25c64'
+          languageCode='en'
+          location='us-central1'
+        />
         <Toaster
           position='top-right'
           toastOptions={{
