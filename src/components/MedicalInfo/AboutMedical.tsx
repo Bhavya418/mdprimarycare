@@ -7,7 +7,7 @@ const AboutMedical = () => {
         <div className='flex flex-col items-center gap-12 lg:flex-row lg:gap-20'>
           {/* Left Column: Image */}
           <div className='w-full lg:w-1/2'>
-            <div className='relative aspect-square overflow-hidden shadow-2xl'>
+            <div className='relative mx-auto aspect-square h-80 w-80 overflow-hidden rounded-2xl shadow-2xl sm:h-96 sm:w-96 lg:mx-0 lg:h-auto lg:w-full lg:rounded-none'>
               <Image
                 src='/about.webp'
                 alt='A compassionate medical professional'
@@ -18,7 +18,7 @@ const AboutMedical = () => {
           </div>
 
           {/* Right Column: Content */}
-          <div className='lg:w-1/2'>
+          <div className='mx-4 text-center sm:mx-8 lg:mx-0 lg:w-1/2 lg:text-left'>
             <p className='font-semibold tracking-wide text-teal-600 uppercase'>
               About Our Clinic
             </p>
@@ -32,7 +32,7 @@ const AboutMedical = () => {
               the best possible treatment. Your health and well-being are our
               highest priorities.
             </p>
-            <div className='mt-8'>
+            <div className='mt-8 flex justify-center lg:justify-start'>
               <a
                 href='/learn-more'
                 className='inline-block rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-md transition-colors hover:bg-teal-700'

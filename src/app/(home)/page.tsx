@@ -10,36 +10,62 @@ import AwardsInfo from '@/components/MedicalInfo/AwardsInfo';
 import TimingInfo from '@/components/FeatureTab/TimingInfo';
 import AppointmentTab from '@/components/Appointment/AppointmentTab';
 import Insurance from '@/components/FeatureTab/Insurance';
-import ChatBot from '@/components/ChatBot/ChatBot';
-import Footer from '@/components/Footer/Footer';
-import BackToTopButton from '@/components/Navigation/BackToTopButton';
 import AppointmentBook from '@/components/Appointment/AppointmentBook';
 import TestimonialCarousel from '@/components/Testimonials/TestimonialCarousel';
+import ClientOnly from '@/components/ClientOnly';
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Hero />
+      <section id='hero'>
+        <Hero />
+      </section>
       <Features />
       <OurMedical />
-      <AboutMedical />
-      <OurServices />
-      <OurTeam />
+      <section id='about'>
+        <AboutMedical />
+      </section>
+      <section id='services'>
+        <OurServices />
+      </section>
+      <section id='team'>
+        <OurTeam />
+      </section>
       <AwardsInfo />
-      <TestimonialCarousel />
-      <AppointmentBook />
+      <section id='testimonials'>
+        <TestimonialCarousel />
+      </section>
+      <ClientOnly
+        fallback={
+          <section className='bg-gray-50 py-16 sm:py-24'>
+            <div className='mx-auto max-w-7xl px-6 sm:px-12 md:px-16 lg:px-8'>
+              <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
+                <div className='animate-pulse space-y-4'>
+                  <div className='h-8 w-3/4 rounded bg-gray-200'></div>
+                  <div className='h-4 w-full rounded bg-gray-200'></div>
+                  <div className='h-4 w-2/3 rounded bg-gray-200'></div>
+                </div>
+                <div className='animate-pulse space-y-4'>
+                  <div className='h-12 rounded bg-gray-200'></div>
+                  <div className='grid grid-cols-2 gap-4'>
+                    <div className='h-12 rounded bg-gray-200'></div>
+                    <div className='h-12 rounded bg-gray-200'></div>
+                  </div>
+                  <div className='h-32 rounded bg-gray-200'></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        }
+      >
+        <AppointmentBook />
+      </ClientOnly>
       <Insurance />
       <AppointmentTab />
-      <TimingInfo />
-      <ChatBot
-        projectId='aai-ps1-sandbox'
-        agentId='276d675c-72f4-4fd7-8b85-01a3a2d25c64'
-        languageCode='en'
-        location='us-central1'
-      />
-      <Footer />
-      <BackToTopButton />
+      <section id='contact'>
+        <TimingInfo />
+      </section>
     </>
   );
 };
