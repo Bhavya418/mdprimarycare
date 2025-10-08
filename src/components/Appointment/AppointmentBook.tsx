@@ -172,7 +172,11 @@ const AppointmentBook = () => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className='space-y-8'>
+            <form
+              onSubmit={handleSubmit}
+              className='space-y-8'
+              suppressHydrationWarning
+            >
               {/* Full Name and Email Row */}
               <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
                 <div className='relative'>
@@ -187,6 +191,7 @@ const AppointmentBook = () => {
                     placeholder='Full Name'
                     className='w-full rounded-md border border-gray-300 py-3 pr-3 pl-10 focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none'
                     required
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className='relative'>
@@ -201,6 +206,7 @@ const AppointmentBook = () => {
                     placeholder='Email Address'
                     className='w-full rounded-md border border-gray-300 py-3 pr-3 pl-10 focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none'
                     required
+                    suppressHydrationWarning
                   />
                 </div>
               </div>
@@ -219,6 +225,7 @@ const AppointmentBook = () => {
                     placeholder='Phone'
                     className='w-full rounded-md border border-gray-300 py-3 pr-3 pl-10 focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none'
                     required
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className='relative'>
@@ -231,6 +238,7 @@ const AppointmentBook = () => {
                     onChange={handleInputChange}
                     className='w-full appearance-none rounded-md border border-gray-300 bg-white py-3 pr-3 pl-10 focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none'
                     required
+                    suppressHydrationWarning
                   >
                     <option value=''>Select Department</option>
                     <option value='family-medicine'>Family Medicine</option>
@@ -255,6 +263,7 @@ const AppointmentBook = () => {
                     onChange={handleInputChange}
                     className='w-full rounded-md border border-gray-300 py-3 pr-3 pl-10 focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none'
                     required
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className='relative'>
@@ -268,6 +277,7 @@ const AppointmentBook = () => {
                     onChange={handleInputChange}
                     className='w-full rounded-md border border-gray-300 py-3 pr-3 pl-10 focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none'
                     required
+                    suppressHydrationWarning
                   />
                 </div>
               </div>
@@ -281,6 +291,7 @@ const AppointmentBook = () => {
                   checked={formData.smsConsent}
                   onChange={handleInputChange}
                   className='h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500'
+                  suppressHydrationWarning
                 />
                 <label
                   htmlFor='smsConsent'
