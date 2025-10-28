@@ -3,19 +3,75 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Semantic color tokens */
+  --primary: #0ea5a4; /* teal-500 */
+  --primary-700: #0d9488; /* teal-600 */
+  --primary-800: #0b4f4f; /* teal-900 */
+  --secondary: #111827; /* cool dark */
+  --muted: #f3f4f6; /* gray-100 */
+  --card: #ffffff;
+  --border: #e5e7eb; /* gray-200 */
+  --success: #16a34a;
+  --danger: #dc2626;
+  --link-hover: blue;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(
+    --font-inter,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue'
+  );
+  --font-geist-sans: var(--font-geist-sans);
+  --font-serif: var(--font-merri, Georgia, 'Times New Roman', serif);
+  --font-mono: var(
+    --font-geist-mono,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    'Roboto Mono'
+  );
+  /* Montserrat and Open Sans (provided by next/font in layout.tsx) */
+  --font-mont: var(
+    --font-mont,
+    'Montserrat',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto
+  );
+  --font-open: var(
+    --font-open,
+    'Open Sans',
+    'Helvetica Neue',
+    Arial,
+    sans-serif
+  );
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* Dark mode semantic colors */
+    --primary: #34d399; /* lighter teal in dark */
+    --primary-700: #059669;
+    --primary-800: #0b4f4f; /* teal-900 */
+
+    --secondary: #e6eef0;
+    --muted: #1f2937; /* gray-800 */
+    --card: #0b1220;
+    --border: #111827;
+    --success: #34d399;
+    --danger: #f87171;
+    --link-hover: blue;
   }
 }
 
@@ -115,6 +171,90 @@ div {
 }
 
 body {
+  /* Use the custom font variables by default */
+  font-family: var(--font-sans);
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Helper utility classes to select fonts */
+.font-inter {
+  font-family: var(--font-sans) !important;
+}
+
+.font-merri {
+  font-family: var(--font-serif) !important;
+}
+
+.font-geist-sans {
+  font-family: var(--font-geist-sans) !important;
+}
+
+.font-geist-mono {
+  font-family: var(--font-mono) !important;
+}
+
+.font-montserrat {
+  font-family: var(--font-mont) !important;
+}
+
+.font-opensans {
+  font-family: var(--font-open) !important;
+}
+
+/* Background utility classes using semantic color tokens */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+.bg-primary-700 {
+  background-color: var(--primary-700) !important;
+}
+.bg-primary-800 {
+  background-color: var(--primary-800) !important;
+}
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+.bg-muted {
+  background-color: var(--muted) !important;
+}
+.bg-card {
+  background-color: var(--card) !important;
+}
+.link-hover {
+  background-color: var(--link-hover) !important;
+}
+
+/* Text color utilities */
+.text-primary {
+  color: var(--primary) !important;
+}
+.text-secondary {
+  color: var(--secondary) !important;
+}
+.text-muted {
+  color: var(--muted) !important;
+}
+
+/* Border utility */
+.border-token {
+  border-color: var(--border) !important;
+}
+
+/* Status utilities */
+.text-success {
+  color: var(--success) !important;
+}
+.text-danger {
+  color: var(--danger) !important;
+}
+.bg-success {
+  background-color: var(--success) !important;
+}
+.bg-danger {
+  background-color: var(--danger) !important;
 }
 
 /* Add cursor pointer to all buttons */

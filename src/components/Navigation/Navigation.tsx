@@ -26,7 +26,7 @@ const Navigation = () => {
   return (
     <nav className='relative bg-white shadow-sm lg:bg-teal-500'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between lg:justify-center'>
+        <div className='font-montserrat flex items-center justify-between lg:justify-center'>
           {/* Mobile hamburger menu - left side */}
           <div className='lg:hidden'>
             <button

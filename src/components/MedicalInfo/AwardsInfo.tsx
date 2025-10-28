@@ -28,11 +28,11 @@ const AwardsInfo = () => {
       <div className='mx-auto max-w-7xl px-8 sm:px-16 md:px-20 lg:px-8'>
         <div className='flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-16'>
           {/* Left side - Text content */}
-          <div className='text-center lg:w-1/2 lg:text-left'>
-            <h2 className='mb-4 text-3xl font-bold text-gray-900 sm:text-4xl'>
+          <div className='text-center lg:w-3/4 lg:text-left'>
+            <h2 className='font-montserrat mb-4 text-4xl leading-tight font-bold text-teal-600 sm:text-5xl'>
               Awards and Recognition
             </h2>
-            <p className='max-w-3xl text-lg text-gray-700'>
+            <p className='font-opensans max-w-3xl text-lg leading-relaxed text-gray-700'>
               From a great work environment to exceptional patient care,
               we&apos;re pleased to say MD Primary Care earns high marks across
               the board.
@@ -52,7 +52,7 @@ const AwardsInfo = () => {
                       className='object-contain'
                     />
                   </div>
-                  <p className='mt-2 max-w-[120px] text-center text-sm text-gray-600'>
+                  <p className='font-montserrat mt-2 max-w-[120px] text-center text-sm font-bold text-gray-600'>
                     {award.title}
                   </p>
                 </div>

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Building } from 'lucide-react';
+import Link from 'next/link';
 
 const OurMedical = () => {
   return (
@@ -12,43 +13,49 @@ const OurMedical = () => {
               <Image
                 src='/stethoscope.webp'
                 alt='Stethoscope on a medical chart'
-                layout='fill'
-                objectFit='cover'
+                fill
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
 
           {/* Text Content */}
           <div className='mx-4 flex flex-col justify-center text-center sm:mx-8 lg:mx-0 lg:w-1/2 lg:text-left'>
-            <p className='font-semibold tracking-wide text-teal-600 uppercase'>
+            <p className='font-montserrat text-lg font-bold tracking-wide text-teal-600 uppercase'>
               OUR MEDICAL
             </p>
-            <h1 className='mt-4 text-4xl leading-tight font-bold text-gray-900 sm:text-5xl'>
+            <h1 className='font-montserrat mt-4 text-4xl leading-tight font-bold text-gray-900 sm:text-5xl'>
               Family Primary Care Physician In Fort Pierce, FL
             </h1>
-            <p className='mt-6 leading-relaxed text-gray-600 sm:max-w-4xl'>
+            <p className='font-opensans mt-6 leading-relaxed text-gray-600 sm:max-w-4xl'>
               MD Primary Care Inc is a full-service traditional primary care
-              physician in Fort Pierce, FL. Dr. Shah and Sherise Molten (ARNP)
-              provide patient-centered quality care to relieve symptoms and
-              promote improved health, including treatment for hypertension,
-              diabetes, back pain, depression, and anxiety disorders, as well as
-              preventive services like annual checkups and physical exams,
-              geriatric medicine, joint injections, and skin biopsies.
+              physician in Fort Pierce, FL. Dr. Shah provides patient-centered
+              quality care to relieve symptoms and promote improved health,
+              including treatment for hypertension, diabetes, back pain,
+              depression, and anxiety disorders, as well as preventive services
+              like annual checkups and physical exams, geriatric medicine, joint
+              injections, and skin biopsies.
             </p>
-            <p className='mt-4 leading-relaxed text-gray-600 sm:max-w-4xl'>
+            <p className='font-opensans mt-4 leading-relaxed text-gray-600 sm:max-w-4xl'>
               We always welcome walk-in and urgent care appointments. Dr. Shah
               is also affiliated with major hospitals, skilled nursing
               facilities, and rehabilitation in the area to provide continuity
               of care to his patients. We provide Medical Assisted Treatment
               (MAT) for substance use disorders.
             </p>
-            <div className='mt-10 flex items-center justify-center gap-4 lg:justify-start'>
-              <button className='inline-block rounded-lg border border-gray-200 px-8 py-3 font-semibold text-teal-500 transition-colors hover:bg-gray-50'>
+            <div className='font-montserrat mt-10 flex items-center justify-center gap-4 lg:justify-start'>
+              <Link
+                href='/about'
+                className='inline-block rounded-lg border border-gray-200 px-8 py-3 font-semibold text-teal-500 transition-colors hover:bg-gray-50'
+              >
                 VIEW MORE
-              </button>
-              <button className='inline-block rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-md transition-colors hover:bg-teal-700'>
+              </Link>
+              <Link
+                href='/contact'
+                className='inline-block rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-md transition-colors hover:bg-teal-700'
+              >
                 CONTACT US
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -81,10 +88,10 @@ const OurMedical = () => {
                       <Building className='h-8 w-8 text-teal-500' />
                     </div>
                     <div>
-                      <p className='text-4xl font-bold text-gray-900'>
+                      <p className='font-montserat text-4xl font-bold text-gray-900'>
                         20<span className='text-teal-500'>+</span>
                       </p>
-                      <p className='text-sm text-gray-500'>
+                      <p className='font-montserrat text-sm text-gray-500'>
                         Years Of Experience
                       </p>
                     </div>

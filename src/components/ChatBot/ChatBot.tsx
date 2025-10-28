@@ -11,11 +11,11 @@ interface ChatBotProps {
 }
 
 const ChatBot: React.FC<ChatBotProps> = ({
-  projectId = 'aai-ps1-sandbox',
-  agentId = '276d675c-72f4-4fd7-8b85-01a3a2d25c64',
-  languageCode = 'en',
-  location = 'us-central1',
-  chatTitle = 'MD Primary Care Assistant',
+  projectId = process.env.PROJECT_ID,
+  agentId = process.env.AGENT_ID,
+  languageCode = process.env.LANGUAGE_CODE,
+  location = process.env.LOCATION,
+  chatTitle = process.env.CHAT_TITLE,
 }) => {
   useEffect(() => {
     // Load the CSS stylesheet

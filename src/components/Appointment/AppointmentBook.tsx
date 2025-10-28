@@ -163,10 +163,10 @@ const AppointmentBook = () => {
           {/* Right side - Form */}
           <div className='order-1 rounded-lg bg-white p-6 shadow-xl sm:p-8 lg:order-2 lg:col-span-1 lg:p-12'>
             <div className='mb-8 text-center lg:text-left'>
-              <h2 className='mb-4 text-2xl font-bold text-slate-800 sm:text-3xl'>
+              <h2 className='font-montserrat mb-4 text-3xl leading-tight font-bold text-slate-800 sm:text-4xl'>
                 Make an Appointment
               </h2>
-              <p className='leading-relaxed text-gray-600'>
+              <p className='font-opensans leading-relaxed text-gray-600'>
                 Contact us any suitable way and make an appointment with the
                 doctor whose help you need! Visit us at the scheduled time.
               </p>

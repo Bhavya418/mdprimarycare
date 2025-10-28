@@ -29,10 +29,10 @@ const Features = () => {
         {features.map((feature, index) => (
           <div key={index} className='flex flex-col items-center px-12 py-12'>
             <div className='mb-4'>{feature.icon}</div>
-            <h3 className='mb-2 text-lg font-semibold text-gray-900'>
+            <h3 className='font-montserrat mb-2 text-2xl font-bold text-gray-900'>
               {feature.title}
             </h3>
-            <p className='max-w-xs text-sm text-gray-500'>
+            <p className='text-md font-opensans max-w-md text-gray-500'>
               {feature.description}
             </p>
           </div>
