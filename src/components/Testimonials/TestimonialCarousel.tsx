@@ -40,7 +40,6 @@ const TestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return;
 
@@ -99,12 +98,12 @@ const TestimonialCarousel = () => {
         <div className='mb-12 text-center'>
           <div className='mb-4 flex items-center justify-center'>
             <div className='h-px w-16 bg-teal-400'></div>
-            <span className='px-4 text-sm font-medium tracking-wider text-teal-400 uppercase'>
+            <span className='font-montserrat px-4 text-lg font-bold tracking-wider text-teal-400 uppercase'>
               Happy Clients
             </span>
             <div className='h-px w-16 bg-teal-400'></div>
           </div>
-          <h2 className='mb-4 text-3xl font-bold text-white md:text-4xl'>
+          <h2 className='font-montserrat mb-4 text-4xl leading-tight font-bold text-white md:text-5xl'>
             What Our Patients Are Saying
           </h2>
         </div>
@@ -135,11 +134,11 @@ const TestimonialCarousel = () => {
                   <div className='flex h-full flex-col justify-center text-center'>
                     {renderStars(testimonial.rating)}
 
-                    <blockquote className='mb-6 text-lg leading-relaxed text-white italic md:text-xl'>
+                    <blockquote className='font-opensans mb-6 text-lg leading-relaxed text-white italic md:text-xl'>
                       &ldquo;{testimonial.text}&rdquo;
                     </blockquote>
 
-                    <cite className='text-lg font-semibold text-teal-300 not-italic'>
+                    <cite className='font-montserrat text-lg font-bold text-teal-300 not-italic'>
                       {testimonial.name}
                     </cite>
                   </div>

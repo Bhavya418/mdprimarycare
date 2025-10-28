@@ -22,7 +22,9 @@ const Home = () => {
         <Hero />
       </section>
       <Features />
-      <OurMedical />
+      <section id='medical'>
+        <OurMedical />
+      </section>
       <section id='about'>
         <AboutMedical />
       </section>
@@ -32,7 +34,9 @@ const Home = () => {
       <section id='team'>
         <OurTeam />
       </section>
-      <AwardsInfo />
+      <section id='awards'>
+        <AwardsInfo />
+      </section>
       <section id='testimonials'>
         <TestimonialCarousel />
       </section>
@@ -61,6 +65,7 @@ const Home = () => {
       >
         <AppointmentBook />
       </ClientOnly>
+
       <Insurance />
       <AppointmentTab />
       <section id='contact'>

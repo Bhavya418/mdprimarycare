@@ -15,20 +15,20 @@ const OurServices = () => {
     { name: 'Liver Problems', icon: '/liver-150x150.webp' },
   ];
   return (
-    <section className='bg-teal-800 py-12 sm:py-16'>
+    <section className='bg-teal-900 py-12 sm:py-16'>
       <div className='mx-6 sm:mx-16 md:mx-16 lg:mx-12'>
         <div className='mx-auto flex max-w-5xl flex-col justify-center border-b-2 border-gray-100 pb-8 text-center lg:text-left'>
-          <p className='font-semibold tracking-wide text-white uppercase'>
+          <p className='font-montserrat font-bold tracking-wide text-green-400 uppercase'>
             WE OFFER SERVICES
           </p>
-          <h2 className='mt-1 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl'>
+          <h2 className='font-montserrat mt-1 text-4xl leading-tight font-bold text-gray-100 sm:text-5xl'>
             We Provide Assistance in Various Directions
           </h2>
-          <p className='text-md mt-4 text-gray-100'>
+          <p className='font-opensans mt-6 leading-relaxed text-gray-100'>
             There is a strong emphasis in the specialty of Family Medicine on
             promoting health and preventing disease, and the physicians at MD
-            Primary Care are ˝˝trained to provide complete health care to
-            patients of all ages.
+            Primary Care are trained to provide complete health care to patients
+            of all ages.
           </p>
         </div>
         <div className='mx-auto mt-10 grid max-w-5xl grid-cols-2 justify-items-center gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
@@ -43,7 +43,9 @@ const OurServices = () => {
                   className='text-green-400'
                 />
               </div>
-              <h3 className='text-md font-bold text-white'>{service.name}</h3>
+              <h3 className='text-md font-opensans font-bold tracking-wide text-white'>
+                {service.name}
+              </h3>
             </div>
           ))}
         </div>

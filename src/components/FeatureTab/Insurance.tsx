@@ -15,10 +15,10 @@ const Insurance = () => {
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Text Content */}
         <div className='mx-auto max-w-5xl text-center'>
-          <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-            Insurances accepted
+          <h2 className='font-montserrat text-4xl leading-tight font-bold text-gray-900 sm:text-5xl'>
+            Insurances Accepted
           </h2>
-          <p className='mt-4 text-lg leading-8 text-gray-600'>
+          <p className='font-opensans mt-4 text-lg leading-relaxed text-gray-600'>
             MD Primary Care accepts most major insurance plans. New patients are
             always welcome, and we accept most major medical insurance plans. If
             you have any questions about the type of insurances we accept,
