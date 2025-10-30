@@ -65,7 +65,6 @@ const Home = () => {
       >
         <AppointmentBook />
       </ClientOnly>
-
       <Insurance />
       <AppointmentTab />
       <section id='contact'>

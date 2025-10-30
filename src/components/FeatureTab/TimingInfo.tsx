@@ -12,8 +12,8 @@ const TimingInfo = () => {
               <Phone className='h-5 w-5' />
             </div>
             <div>
-              <p className='text-lg font-semibold'>+1-772-302-3767</p>
-              <p className='-mt-1 text-sm opacity-90'>
+              <p className='font-opensans text-lg font-bold'>+1-772-302-3767</p>
+              <p className='font-opensans -mt-1 text-sm opacity-90'>
                 Have a question? Call us now
               </p>
             </div>
@@ -25,8 +25,10 @@ const TimingInfo = () => {
               <Mail className='h-5 w-5' />
             </div>
             <div>
-              <p className='text-lg font-semibold'>cshah@mdprimarycare.us</p>
-              <p className='-mt-1 text-sm opacity-90'>
+              <p className='font-opensans text-lg font-bold'>
+                cshah@mdprimarycare.us
+              </p>
+              <p className='font-opensans -mt-1 text-sm opacity-90'>
                 Need support? Drop us an email
               </p>
             </div>
@@ -38,8 +40,12 @@ const TimingInfo = () => {
               <Clock className='h-5 w-5' />
             </div>
             <div>
-              <p className='text-lg font-semibold'>Mon - Fri 8 AM - 5 PM</p>
-              <p className='-mt-1 text-sm opacity-90'>We are open on</p>
+              <p className='font-opensans text-lg font-bold'>
+                Mon - Fri 8 AM - 5 PM
+              </p>
+              <p className='font-opensans -mt-1 text-sm opacity-90'>
+                We are open on
+              </p>
             </div>
           </div>
         </div>
