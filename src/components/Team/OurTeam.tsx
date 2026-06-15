@@ -10,6 +10,21 @@ const OurTeam = () => {
       description:
         'Board-certified family medicine physician with extensive experience in primary care.',
     },
+    {
+      name: 'Dr. Ilee Fagarass',
+      title: 'Family Nurse Practitioner',
+      image: '/ileefagarass.jpg',
+      description:
+        'Family nurse practitioner caring for patients with common illnesses, chronic diseases, and minor injuries.',
+    },
+    {
+      name: 'Meredith McCoy',
+      title: 'Nurse Practitioner',
+      image: '/meredithmcoy.jpg',
+      // TODO: Replace with real bio once provided by client.
+      description:
+        'Experienced nurse practitioner focused on preventive care and supporting patients through every stage of wellness.',
+    },
   ];
 
   return (
@@ -32,13 +47,13 @@ const OurTeam = () => {
         <div className='grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-12'>
           {teamMembers.map((member, index) => (
             <div key={index} className='group text-center'>
-              <div className='relative mb-6 overflow-hidden rounded-lg bg-teal-50'>
+              <div className='relative mb-6 h-80 w-full overflow-hidden rounded-lg bg-teal-50'>
                 <Image
                   src={member.image}
                   alt={member.name}
-                  width={300}
-                  height={300}
-                  className='h-80 w-full object-cover transition-transform duration-300 group-hover:scale-105'
+                  fill
+                  sizes='(max-width: 768px) 100vw, 33vw'
+                  className='object-cover object-top transition-transform duration-300 group-hover:scale-105'
                 />
               </div>
               <h3 className='font-montserrat text-2xl font-bold text-gray-900'>
