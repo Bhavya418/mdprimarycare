@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import TestimonialCard from '@/components/Testimonials/TestimonialCard';
 
@@ -20,6 +19,7 @@ const DoctorProfile: React.FC<DoctorProfileProps> = ({ activeDoctor }) => {
   const getDoctorData = (): DoctorData => {
     switch (activeDoctor) {
       case 'dr-chintan-shah':
+      default:
         return {
           name: 'DR. CHINTAN SHAH',
           image: '/chintanshah.png', // You'll need to add actual doctor images
@@ -105,7 +105,7 @@ const DoctorProfile: React.FC<DoctorProfileProps> = ({ activeDoctor }) => {
           ],
           testimonials: [],
         };
-      case 'meredith-mccoy':
+      case 'dr-meredith-mccoy':
         return {
           name: 'MEREDITH MCCOY',
           image: '/meredithmcoy.jpg',
@@ -141,8 +141,6 @@ const DoctorProfile: React.FC<DoctorProfileProps> = ({ activeDoctor }) => {
             },
           ],
         };
-      default:
-        return getDoctorData();
     }
   };
 

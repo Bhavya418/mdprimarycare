@@ -15,7 +15,7 @@ export default function TeamPage() {
         return 'Dr. Chintan Shah';
       case 'dr-ilee-fagarass':
         return 'Dr. Ilee Fagarass';
-      case 'meredith-mccoy':
+      case 'dr-meredith-mccoy':
         return 'Meredith McCoy';
       default:
         return 'Dr. Chintan Shah';
