@@ -10,8 +10,8 @@ interface TeamTabProps {
 const TeamTab: React.FC<TeamTabProps> = ({ activeDoctor, onDoctorChange }) => {
   const doctors = [
     { id: 'dr-chintan-shah', label: 'Dr. Chintan Shah' },
-    { id: 'dr-jane-smith', label: 'Dr. Jane Smith' },
-    { id: 'dr-john-doe', label: 'Dr. John Doe' },
+    { id: 'dr-ilee-fagarass', label: 'Dr. Ilee Fagarass' },
+    { id: 'dr-meredith-mccoy', label: 'Dr. Meredith McCoy' },
   ];
 
   return (

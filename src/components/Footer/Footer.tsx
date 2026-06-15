@@ -8,19 +8,17 @@ const Footer = () => {
         <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4'>
           {/* About MD Primary Care */}
           <div className='sm:col-span-2 lg:col-span-1'>
-            <h3 className='mb-4 text-xl font-semibold'>
+            <h3 className='font-montserrat mb-4 text-2xl leading-tight font-bold'>
               About MD Primary Care
             </h3>
-            <p className='mb-4 leading-relaxed text-gray-300'>
+            <p className='font-opensans mb-4 leading-relaxed text-gray-300'>
               MD Primary Care is equipped with board-certified physicians,
               urgent care specialists, and medical equipment to create the
               best-in-class urgent care experience for all.
             </p>
-            <p className='leading-relaxed text-gray-300'>
+            <p className='font-opensans leading-relaxed text-gray-300'>
               We constantly strive to match our passion for urgent care into an
-              excellent patient experience, whenever you need us. If you&apos;re
-              looking for primary care doctors near you, then you may contact
-              our office by calling at 772-302-3767.
+              excellent patient experience, whenever you need us.
             </p>
           </div>
 
@@ -44,38 +42,42 @@ const Footer = () => {
           <div className='flex flex-col gap-4 sm:col-span-2 sm:flex-row sm:gap-6 lg:col-span-2 lg:gap-8'>
             {/* Services */}
             <div className='flex-1'>
-              <h3 className='mb-4 text-xl font-semibold'>Services</h3>
-              <ul className='space-y-2 text-gray-300'>
-                <li>- Family Medicine</li>
-                <li>- Primary Care</li>
-                <li>- Family Planning</li>
-                <li>- Weight Loss</li>
-                <li>- Health Checkups</li>
+              <h3 className='font-montserrat mb-4 text-2xl leading-tight font-bold'>
+                Services
+              </h3>
+              <ul className='font-opensans space-y-2 leading-relaxed text-gray-300'>
+                <li>Family Medicine</li>
+                <li>Primary Care</li>
+                <li>Family Planning</li>
+                <li>Weight Loss</li>
+                <li>Health Checkups</li>
               </ul>
             </div>
 
             {/* Contact Us */}
             <div className='flex-1'>
-              <h3 className='mb-4 text-xl font-semibold'>Contact Us</h3>
-              <div className='space-y-3 text-gray-300'>
+              <h3 className='font-montserrat mb-4 text-2xl font-bold'>
+                Contact Us
+              </h3>
+              <div className='font-opensans space-y-3 text-gray-300'>
                 <div>
-                  <p className='font-medium'>Address:</p>
+                  <p className='font-semibold'>Address:</p>
                   <p>2215 Nebraska avenue#2B,</p>
                   <p>Fort Pierce FL 34950, United States</p>
                 </div>
 
                 <div>
-                  <p className='font-medium'>Phone:</p>
+                  <p className='font-semibold'>Phone:</p>
                   <p>772-302-3767</p>
                 </div>
 
                 <div>
-                  <p className='font-medium'>Fax:</p>
-                  <p>8884367197</p>
+                  <p className='font-semibold'>Fax:</p>
+                  <p>772-828-3768</p>
                 </div>
 
                 <div>
-                  <p className='font-medium'>Opening Hours:</p>
+                  <p className='font-semibold'>Opening Hours:</p>
                   <p>Mon - Fri: 8 AM – 5 PM</p>
                 </div>
               </div>
@@ -84,7 +86,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className='mt-12 border-t border-gray-700 pt-8'>
+        <div className='font-opensans mt-12 border-t border-gray-700 pt-8'>
           <p className='text-center text-sm text-gray-400'>
             Copyright © 2025 |{' '}
             <a

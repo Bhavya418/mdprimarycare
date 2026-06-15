@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import TestimonialCard from '@/components/Testimonials/TestimonialCard';
 
@@ -6,10 +5,21 @@ interface DoctorProfileProps {
   activeDoctor: string;
 }
 
+interface DoctorData {
+  name: string;
+  image: string;
+  overview: { title: string; content: string[] };
+  honorsAndAwards: { title: string; description: string }[];
+  education: { institution: string; description: string }[];
+  testimonials: { name: string; rating: number; text: string; date: string }[];
+  bookingNote?: string;
+}
+
 const DoctorProfile: React.FC<DoctorProfileProps> = ({ activeDoctor }) => {
-  const getDoctorData = () => {
+  const getDoctorData = (): DoctorData => {
     switch (activeDoctor) {
       case 'dr-chintan-shah':
+      default:
         return {
           name: 'DR. CHINTAN SHAH',
           image: '/chintanshah.png', // You'll need to add actual doctor images
@@ -71,96 +81,66 @@ const DoctorProfile: React.FC<DoctorProfileProps> = ({ activeDoctor }) => {
             },
           ],
         };
-      case 'dr-jane-smith':
+      case 'dr-ilee-fagarass':
         return {
-          name: 'DR. JANE SMITH',
-          image: '/doctor-placeholder.jpg',
+          name: 'DR. ILEE FAGARASS',
+          image: '/ileefagarass.jpg',
           overview: {
             title: 'Overview',
             content: [
-              "Dr. Jane Smith is a dedicated family physician with over 15 years of experience in primary care. She is board-certified in Family Medicine and has a special interest in preventive care and women's health.",
-              'Dr. Smith completed her medical training at Harvard Medical School and her residency at Massachusetts General Hospital. She is committed to providing comprehensive, patient-centered care.',
-              'In her spare time, Dr. Smith enjoys hiking, reading, and volunteering at local community health clinics.',
+              'Ms. Ilee Fagarass is a family nurse practitioner who sees patients at MD Primary Care in Fort Pierce, FL. She can help with common illnesses, chronic diseases, and minor injuries.',
+              "Ms. Fagarass explains patients' conditions and prepares individualized treatment plans. In addition to writing prescriptions, she discusses lifestyle and dietary tips for lasting outcomes. She also answers queries, encourages preventive care, schedules follow-up appointments, and writes referrals, if needed.",
+              'Ms. Fagarass earned her master’s degree in adult nurse practitioner from Chamberlain University - Chicago.',
             ],
           },
-          honorsAndAwards: [
-            {
-              title: 'Excellence in Patient Care',
-              description:
-                'Recognized for outstanding patient satisfaction scores and dedication to quality healthcare delivery.',
-            },
-          ],
+          bookingNote:
+            'Expect a call from our office after booking to verify your insurance, payment, and appointment details. This will ensure you are set up for a successful appointment.',
+          // TODO: Add honors and awards once provided by client.
+          honorsAndAwards: [],
           education: [
             {
-              institution: 'Harvard Medical School',
-              description: 'Doctor of Medicine degree with honors.',
-            },
-            {
-              institution: 'Massachusetts General Hospital',
-              description: 'Completed Family Medicine residency program.',
+              institution: 'Chamberlain University - Chicago',
+              description: 'Master’s degree in Adult Nurse Practitioner.',
             },
           ],
-          testimonials: [
-            {
-              name: 'David Chen',
-              rating: 5,
-              text: 'Dr. Smith is knowledgeable, caring, and takes time to address all my health concerns. I appreciate the personalized attention I receive.',
-              date: '1 week ago',
-            },
-            {
-              name: 'Maria Garcia',
-              rating: 5,
-              text: 'Excellent healthcare provider! Dr. Smith goes above and beyond. She provides comprehensive care and makes you feel comfortable throughout your visit.',
-              date: '2 weeks ago',
-            },
-          ],
+          testimonials: [],
         };
-      case 'dr-john-doe':
+      case 'dr-meredith-mccoy':
         return {
-          name: 'DR. JOHN DOE',
-          image: '/doctor-placeholder.jpg',
+          name: 'MEREDITH MCCOY',
+          image: '/meredithmcoy.jpg',
+          // TODO: Replace overview with real bio once provided by client.
           overview: {
             title: 'Overview',
             content: [
-              'Dr. John Doe specializes in internal medicine with a focus on chronic disease management and geriatric care. He has been practicing medicine for over 20 years.',
-              'Dr. Doe graduated from Johns Hopkins University School of Medicine and completed his internal medicine residency at Mayo Clinic.',
-              'He is passionate about helping patients manage complex medical conditions and believes in the importance of building strong doctor-patient relationships.',
+              'Meredith McCoy is an experienced Nurse Practitioner focused on preventive care and supporting patients through every stage of wellness. She believes in building strong, trusting relationships with the patients she serves.',
+              'Her areas of focus include routine wellness visits, chronic condition management, and patient education, always with an emphasis on clear communication.',
+              'In her free time, Meredith enjoys spending time with family and pursuing an active, healthy lifestyle.',
             ],
           },
-          honorsAndAwards: [
-            {
-              title: 'Top Doctor Award',
-              description:
-                'Recognized by peers for exceptional medical knowledge and patient care.',
-            },
-          ],
-          education: [
-            {
-              institution: 'Johns Hopkins University School of Medicine',
-              description: 'Doctor of Medicine degree.',
-            },
-            {
-              institution: 'Mayo Clinic',
-              description: 'Internal Medicine residency program.',
-            },
-          ],
+          honorsAndAwards: [],
+          education: [],
           testimonials: [
             {
-              name: 'Robert Wilson',
+              name: 'Megan M.',
               rating: 5,
-              text: 'Professional, caring, and efficient. Dr. Doe takes the time to explain medical conditions and treatment options clearly.',
-              date: '1 month ago',
+              text: 'Great experience! Meredith McCoy is the most organized, informed and forthcoming of any Healthcare provider I’ve ever had! She listened to my concerns, ordered appropriate labs, and laid out the next steps to be taken. Explained the different options depending on my test results.',
+              date: 'June 9, 2026',
             },
             {
-              name: 'Jennifer Adams',
+              name: 'Jaclynn M.',
               rating: 5,
-              text: 'Dr. Doe has been excellent in managing my chronic conditions. His expertise in internal medicine is evident in every consultation.',
-              date: '2 weeks ago',
+              text: 'I have been looking for a new primary doctor and I am glad I came across this practice. The staff was very nice and I was able to make an appointment without having to wait months. I had my annual exam and it was thorough and I felt heard. I am going back for my bloodwork and follow up to review the results.',
+              date: 'June 1, 2026',
+            },
+            {
+              name: 'Frances P.',
+              rating: 5,
+              text: 'Dr McCoy is thorough, expert, and compassionate. Her care over the last 4 years has delivered great results in the health of the 105 year old patient. Couldn’t ask for more. Thank you Dr McCoy.',
+              date: 'May 22, 2026',
             },
           ],
         };
-      default:
-        return getDoctorData();
     }
   };
 
@@ -207,74 +187,92 @@ const DoctorProfile: React.FC<DoctorProfileProps> = ({ activeDoctor }) => {
         </div>
 
         {/* Honors and Awards & Education Section */}
-        <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
-          {/* Honors and Awards */}
-          <div>
-            <h3 className='mb-6 text-2xl font-bold text-gray-900'>
-              Honors and Awards
-            </h3>
-            <div className='space-y-6'>
-              {doctor.honorsAndAwards.map((award, index) => (
-                <div key={index}>
-                  <h4 className='mb-2 font-semibold text-gray-900'>
-                    {award.title}
-                  </h4>
-                  <p className='leading-relaxed text-gray-600'>
-                    {award.description}
-                  </p>
+        {(doctor.honorsAndAwards.length > 0 || doctor.education.length > 0) && (
+          <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
+            {/* Honors and Awards */}
+            {doctor.honorsAndAwards.length > 0 && (
+              <div>
+                <h3 className='mb-6 text-2xl font-bold text-gray-900'>
+                  Honors and Awards
+                </h3>
+                <div className='space-y-6'>
+                  {doctor.honorsAndAwards.map((award, index) => (
+                    <div key={index}>
+                      <h4 className='mb-2 font-semibold text-gray-900'>
+                        {award.title}
+                      </h4>
+                      <p className='leading-relaxed text-gray-600'>
+                        {award.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+            )}
 
-          {/* Education */}
-          <div>
-            <h3 className='mb-6 text-2xl font-bold text-gray-900'>Education</h3>
-            <div className='space-y-6'>
-              {doctor.education.map((edu, index) => (
-                <div key={index}>
-                  <h4 className='mb-2 font-semibold text-gray-900'>
-                    {edu.institution}
-                  </h4>
-                  <p className='leading-relaxed text-gray-600'>
-                    {edu.description}
-                  </p>
+            {/* Education */}
+            {doctor.education.length > 0 && (
+              <div>
+                <h3 className='mb-6 text-2xl font-bold text-gray-900'>
+                  Education
+                </h3>
+                <div className='space-y-6'>
+                  {doctor.education.map((edu, index) => (
+                    <div key={index}>
+                      <h4 className='mb-2 font-semibold text-gray-900'>
+                        {edu.institution}
+                      </h4>
+                      <p className='leading-relaxed text-gray-600'>
+                        {edu.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
-        </div>
+        )}
 
         {/* Patient Testimonials Section */}
-        <div className='mt-16'>
-          <h3 className='mb-8 text-center text-3xl font-bold text-gray-900'>
-            What Patients Say About {doctor.name.split(' ').slice(1).join(' ')}
-          </h3>
-          <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-            {doctor.testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={index}
-                name={testimonial.name}
-                rating={testimonial.rating}
-                text={testimonial.text}
-                date={testimonial.date}
-              />
-            ))}
+        {doctor.testimonials.length > 0 && (
+          <div className='mt-16'>
+            <h3 className='mb-8 text-center text-3xl font-bold text-gray-900'>
+              What Patients Say About{' '}
+              {doctor.name.split(' ').slice(1).join(' ')}
+            </h3>
+            <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+              {doctor.testimonials.map((testimonial, index) => (
+                <TestimonialCard
+                  key={index}
+                  name={testimonial.name}
+                  rating={testimonial.rating}
+                  text={testimonial.text}
+                  date={testimonial.date}
+                />
+              ))}
+            </div>
           </div>
+        )}
 
-          {/* Call to Action */}
-          <div className='mt-12 text-center'>
-            <p className='mb-6 text-gray-600'>
-              Ready to experience exceptional healthcare with{' '}
-              {doctor.name.split(' ').slice(1).join(' ')}?
-            </p>
-            <a
-              href='/contact'
-              className='inline-block rounded-md bg-teal-500 px-6 py-3 font-medium text-white transition-colors duration-200 hover:bg-teal-600'
-            >
-              Schedule an Appointment
-            </a>
-          </div>
+        {/* Booking Note & Call to Action */}
+        <div className='mt-16 text-center'>
+          {doctor.bookingNote && (
+            <div className='mx-auto mb-8 max-w-3xl rounded-lg border-l-4 border-teal-500 bg-teal-50 p-4 text-left'>
+              <p className='leading-relaxed text-gray-700'>
+                {doctor.bookingNote}
+              </p>
+            </div>
+          )}
+          <p className='mb-6 text-gray-600'>
+            Ready to experience exceptional healthcare with{' '}
+            {doctor.name.split(' ').slice(1).join(' ')}?
+          </p>
+          <a
+            href='/contact'
+            className='inline-block rounded-md bg-teal-500 px-6 py-3 font-medium text-white transition-colors duration-200 hover:bg-teal-600'
+          >
+            Schedule an Appointment
+          </a>
         </div>
       </div>
     </div>

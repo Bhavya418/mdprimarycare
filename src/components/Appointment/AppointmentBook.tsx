@@ -49,7 +49,7 @@ const AppointmentBook = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        timeout: 10000, // 10 seconds timeout
+        timeout: 10000,
       });
 
       if (response.status === 200) {

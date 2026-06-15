@@ -13,10 +13,10 @@ export default function TeamPage() {
     switch (activeDoctor) {
       case 'dr-chintan-shah':
         return 'Dr. Chintan Shah';
-      case 'dr-jane-smith':
-        return 'Dr. Jane Smith';
-      case 'dr-john-doe':
-        return 'Dr. John Doe';
+      case 'dr-ilee-fagarass':
+        return 'Dr. Ilee Fagarass';
+      case 'dr-meredith-mccoy':
+        return 'Meredith McCoy';
       default:
         return 'Dr. Chintan Shah';
     }
